@@ -1,5 +1,7 @@
 h1 { 
   font-family: 'Candal', sans-serif;
+  font-size: 3em;
+  font-variant: small-caps;
 }
 body {
   font-family: 'Didact Gothic', sans-serif;
