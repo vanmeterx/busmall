@@ -1,6 +1,11 @@
 h1 { 
   font-family: 'Candal', sans-serif;
 }
-  body {
+body {
   font-family: 'Didact Gothic', sans-serif;
+}
+
+li {
+  float:left;
+  margin-right: 5%;
 }
