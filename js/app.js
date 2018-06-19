@@ -5,17 +5,18 @@ var imageTwo = document.getElementById('imageTwo');
 var imageThree = document.getElementById('imageThree');
 
 
-//in-class peer assistance, helping me with this and the intialize function hint: 
-name imageChoice (name, src, timesViewed, timesClicked);
+/*in-class peer assistance, helping me with getting
+the ball rolling for setting up images */ 
+function imageChoice (name, src, timesViewed, timesShown){
   this.name = name;
   this.src = src;
   this.timesViewed = timesViewed;
   this.timesShown = timesShown;
-
+}
 
  //where images will be organized:
 function initialize() {
-               //(name,  the location, times viewed, times clicked)
+               //new blahBlah(name,  the location, times viewed, times clicked)
   new imageChoice('r2d2Bag', 'img/bag.jpg', 0,0);
   new imageChoice('banana', 'img/banana.jpg', 0,0);
   new imageChoice('bathroom', 'img/bathroom.jpg', 0,0);
@@ -26,7 +27,7 @@ function initialize() {
   new imageChoice('cthulhu', 'img/cthulu.jpg', 0,0);
   new imageChoice('dogDuck', 'img/dog-duck.jpg', 0,0);
   new imageChoice('dragonMeat', 'img/dragon.jpg', 0,0);
-  new imageChoice('pen', 'img/pen.jpg' 0,0);
+  new imageChoice('pen', 'img/pen.jpg', 0,0);
   new imageChoice('petSweeper', 'img/pen.jpg', 0,0);
   new imageChoice('scissors', 'img/scissors.jpg', 0,0);
   new imageChoice('shark', 'img/shark.jpg', 0,0);
@@ -40,7 +41,7 @@ function initialize() {
 
 //typed out from class just to give me a basic idea of how to adjust what i've got.
 
-// let's start a chart 
+// let's start a chart! 
 
 function showResultChart() {
   var canvas = document.getElementById('resultsCanvas');
@@ -91,4 +92,3 @@ function showResultChart() {
 }
 
 //now to add the data
-*/

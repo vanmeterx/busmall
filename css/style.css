@@ -2,15 +2,14 @@ h1 {
   font-family: 'Passion One', sans-serif;
   font-size: 5em;
   font-variant: small-caps;
-  color: rgb(44, 30, 49);
+  color: rgb(77, 43, 90);
   margin-left: 2%;
 }
 
 h2 {
   font-family: 'Passion One', sans-serif;
   font-size: 2em;
-  color: rgb(44, 30, 49);
-  margin-left: 2%;
+  color: rgb(77, 43, 90);
 }
 
 body {
@@ -18,13 +17,9 @@ body {
 }
 
 div {
-  margin-left: 5%;
+  margin-left: 2%;
 }
 
-li {
-  float:left;
-  margin-left: 5%;
-}
 
 footer {
   position: fixed;
