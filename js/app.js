@@ -15,8 +15,12 @@ name imageChoice (name, src, timesViewed, timesClicked);
 
  //where images will be organized:
 function initialize() {
+                 //(name,  the location, times viewed, times clicked)
 
+  new imageChoice('r2d2', 'img/bag.jpg' 0,0);
+  new imageChoice()
 }
+
 
 
 
