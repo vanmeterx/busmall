@@ -5,7 +5,7 @@ var imageTwo = document.getElementById('imageTwo');
 var imageThree = document.getElementById('imageThree');
 
 
-//in-class peer assistance:
+//in-class peer assistance, helping me with this and the intialize function hint: 
 name imageChoice (name, src, timesViewed, timesClicked);
   this.name = name;
   this.src = src;
@@ -39,7 +39,7 @@ function initialize() {
 
 
 
-
+/*
 //typed out from class
 // let's start a chart 
 
@@ -92,4 +92,4 @@ function showResultChart() {
 }
 
 //now to add the data
-
+*/
