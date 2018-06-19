@@ -1,0 +1,25 @@
+h1 { 
+  font-family: 'Candal', sans-serif;
+  font-size: 3em;
+  font-variant: small-caps;
+  color: rgb(44, 30, 49);
+}
+body {
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+li {
+  float:left;
+  margin-right: 5%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(94, 81, 99);
+  color: #fff;
+}
