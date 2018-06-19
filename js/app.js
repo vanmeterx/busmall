@@ -38,9 +38,8 @@ function initialize() {
 }
 
 
+//typed out from class just to give me a basic idea of how to adjust what i've got.
 
-/*
-//typed out from class
 // let's start a chart 
 
 function showResultChart() {

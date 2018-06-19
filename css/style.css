@@ -1,9 +1,17 @@
 h1 { 
-  font-family: 'Candal', sans-serif;
-  font-size: 3em;
+  font-family: 'Passion One', sans-serif;
+  font-size: 5em;
   font-variant: small-caps;
   color: rgb(44, 30, 49);
+  margin-left: 2%;
 }
+
+h2 {
+  font-family: 'Passion One', sans-serif;
+  font-size: 2em;
+  color: rgb(44, 30, 49);
+}
+
 body {
   font-family: 'Didact Gothic', sans-serif;
 }
