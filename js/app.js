@@ -5,7 +5,7 @@ var imageTwo = document.getElementById('imageTwo');
 var imageThree = document.getElementById('imageThree');
 
 
-//in-class assistance
+//in-class peer assistance:
 name imageChoice (name, src, timesViewed, timesClicked);
   this.name = name;
   this.src = src;
@@ -15,10 +15,14 @@ name imageChoice (name, src, timesViewed, timesClicked);
 
  //where images will be organized:
 function initialize() {
-                 //(name,  the location, times viewed, times clicked)
 
+               //(name,  the location, times viewed, times clicked)
   new imageChoice('r2d2', 'img/bag.jpg' 0,0);
-  new imageChoice()
+  new imageChoice('banana', 'img/banana.jpg' 0,0);
+  new imageChoice('bathroom', 'img/banana.jpg' 0,0);
+  new imageChoice('boots', 'img/boots.jpg' 0,0);
+  new imageChoice('bfast', 'breakfast.jpg' 0,0);
+  new imageChoice('gum')
 }
 
 
