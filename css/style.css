@@ -10,15 +10,20 @@ h2 {
   font-family: 'Passion One', sans-serif;
   font-size: 2em;
   color: rgb(44, 30, 49);
+  margin-left: 2%;
 }
 
 body {
   font-family: 'Didact Gothic', sans-serif;
 }
 
+div {
+  margin-left: 5%;
+}
+
 li {
   float:left;
-  margin-right: 5%;
+  margin-left: 5%;
 }
 
 footer {
@@ -26,7 +31,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 20;
   text-align: center;
   background-color: rgb(94, 81, 99);
   color: #fff;
