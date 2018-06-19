@@ -15,14 +15,26 @@ name imageChoice (name, src, timesViewed, timesClicked);
 
  //where images will be organized:
 function initialize() {
-
                //(name,  the location, times viewed, times clicked)
-  new imageChoice('r2d2', 'img/bag.jpg' 0,0);
-  new imageChoice('banana', 'img/banana.jpg' 0,0);
-  new imageChoice('bathroom', 'img/banana.jpg' 0,0);
-  new imageChoice('boots', 'img/boots.jpg' 0,0);
-  new imageChoice('bfast', 'breakfast.jpg' 0,0);
-  new imageChoice('gum')
+  new imageChoice('r2d2Bag', 'img/bag.jpg', 0,0);
+  new imageChoice('banana', 'img/banana.jpg', 0,0);
+  new imageChoice('bathroom', 'img/bathroom.jpg', 0,0);
+  new imageChoice('boots', 'img/boots.jpg', 0,0);
+  new imageChoice('breakfast', 'img/breakfast.jpg', 0,0);
+  new imageChoice('bubblegum', 'img/bubblegum.jpg', 0,0);
+  new imageChoice('chair', 'img/chair.jpg', 0,0);
+  new imageChoice('cthulhu', 'img/cthulu.jpg', 0,0);
+  new imageChoice('dogDuck', 'img/dog-duck.jpg', 0,0);
+  new imageChoice('dragonMeat', 'img/dragon.jpg', 0,0);
+  new imageChoice('pen', 'img/pen.jpg' 0,0);
+  new imageChoice('petSweeper', 'img/pen.jpg', 0,0);
+  new imageChoice('scissors', 'img/scissors.jpg', 0,0);
+  new imageChoice('shark', 'img/shark.jpg', 0,0);
+  new imageChoice('tauntaun', 'img/tauntaun.jpg', 0,0);
+  new imageChoice('unicornMeat', 'img/unicorn.jpg', 0,0);
+  new imageChoice('usbTentacle', 'img/usb.gif', 0,0);
+  new imageChoice('wateringCan', 'img/water-can.jpg', 0,0);
+  new imageChoice('wineGlass', 'img/wine-glass.jpg', 0,0);
 }
 
 
