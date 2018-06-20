@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>BusMall</title>
-    <link href="https://fonts.googleapis.com/css?family=Candal|Didact+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Passion+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -19,15 +19,15 @@
         <div>
           <label>
             <img src="http://via.placeholder.com/200x200" >  
-            <input type="radio" name="imageClick" id="image1" />
+            <input type="radio" name="vote" value="p0" />
           </label>
           <label>
             <img src="http://via.placeholder.com/200x200" >
-            <input type="radio" name="imageClick" id=image2 />
+            <input type="radio" name="vote" value="p1" />
           </label>
           <label>
             <img src="http://via.placeholder.com/200x200" >
-            <input type="radio" name="imageClick" id=image3 />
+            <input type="radio" name="vote" value="p3" />
           </label>
         </div>
         <div>
@@ -35,9 +35,10 @@
         </div>
       </form>
     </div>
+    <script src="js/lib/Chart.bundle.js"></script>
     <script src="js/app.js"></script>
-    </body>
-  <footer>
-    &copy; BusMall of America, 2018
-  </footer>
+    <footer>
+      &copy; BusMall of America, 2018
+    </footer>  
+  </body>
 </html>

@@ -1,24 +1,32 @@
 h1 { 
-  font-family: 'Candal', sans-serif;
-  font-size: 3em;
+  font-family: 'Passion One', sans-serif;
+  font-size: 5em;
   font-variant: small-caps;
-  color: rgb(44, 30, 49);
+  color: rgb(77, 43, 90);
+  margin-left: 2%;
 }
+
+h2 {
+  font-family: 'Passion One', sans-serif;
+  font-size: 2em;
+  color: rgb(77, 43, 90);
+}
+
 body {
   font-family: 'Didact Gothic', sans-serif;
 }
 
-li {
-  float:left;
-  margin-right: 5%;
+div {
+  margin-left: 2%;
 }
+
 
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 20;
   text-align: center;
   background-color: rgb(94, 81, 99);
   color: #fff;
