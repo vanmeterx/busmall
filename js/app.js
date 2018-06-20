@@ -5,13 +5,16 @@ function displayImages(){
   var imageTwo = document.getElementById('imageTwo');
   var imageThree = document.getElementById('imageThree');
   //TODO: Generate 3 random numbers
+  
   var randNum1 = 2;
   var randNum2 = 10;
   var randNum3 = 7;
+
   //TODO: Verify that no two numbers are the same
   imageOne.src = ImageChoice.all[randNum1].src;
   imageTwo.src = ImageChoice.all[randNum2].src;
   imageThree.src = ImageChoice.all[randNum3].src;
+  
   //TODO: Add one to the timesViewed
 
 }
@@ -38,7 +41,7 @@ function initialize() {
   new ImageChoice('breakfast', 'img/breakfast.jpg');
   new ImageChoice('bubblegum', 'img/bubblegum.jpg');
   new ImageChoice('chair', 'img/chair.jpg');
-  new ImageChoice('cthulhu', 'img/cthulu.jpg');
+  new ImageChoice('cthulhu', 'img/cthulhu.jpg');
   new ImageChoice('dogDuck', 'img/dog-duck.jpg');
   new ImageChoice('dragonMeat', 'img/dragon.jpg');
   new ImageChoice('pen', 'img/pen.jpg');

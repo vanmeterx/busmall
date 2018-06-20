@@ -35,7 +35,6 @@ div.list {
 div.list img {
   width: 32.666666667%;
   border: 1px solid green;
-  display: inline-block;
   float: left;
   text-align: center;
   margin-left: 1%;
