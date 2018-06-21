@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 h1 { 
   font-family: 'Passion One', sans-serif;
   font-size: 5em;
@@ -10,24 +18,41 @@ h2 {
   font-family: 'Passion One', sans-serif;
   font-size: 2em;
   color: rgb(77, 43, 90);
+  text-align:center;
 }
 
 body {
   font-family: 'Didact Gothic', sans-serif;
 }
 
-div {
-  margin-left: 2%;
+div.list {
+  margin: 0 auto;
+  width: 600px;
+  border: 1px solid red;
+  overflow: auto;
 }
 
+div.list img {
+  width: 32.666666667%;
+  border: 1px solid green;
+  float: left;
+  text-align: center;
+  margin-left: 1%;
+  margin-right: 0;
+}
+
+div.list img:first-of-type{
+  margin-left: 0;
+}
 
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20;
+  padding: 20px;
   text-align: center;
   background-color: rgb(94, 81, 99);
   color: #fff;
+  margin-top:  50px;
 }
