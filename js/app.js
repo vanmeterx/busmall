@@ -1,27 +1,81 @@
 'use strict';
+var maxVotes = 5;
+var voteCount = 0;
+
+var lastViewed = [];
+
+function getRandomImage() {
+  var nextIndex = Math.floor(Math.random() * ImageChoice.all.length);
+  return ImageChoice.all[nextIndex];
+}
+
 
 function displayImages(){
   var imageOne = document.getElementById('imageOne');
   var imageTwo = document.getElementById('imageTwo');
   var imageThree = document.getElementById('imageThree');
-  //TODO: Generate 3 random numbers
-  
-  var randNum1 = 2;
-  var randNum2 = 10;
-  var randNum3 = 7;
 
-  //TODO: Verify that no two numbers are the same
-  imageOne.src = ImageChoice.all[randNum1].src;
-  imageTwo.src = ImageChoice.all[randNum2].src;
-  imageThree.src = ImageChoice.all[randNum3].src;
+  do {
+    var randImg1 = getRandomImage();
+    } while (lastViewed.includes(randImg1));
+    lastViewed.push(randImg1);
+    
+    var randImg2 = getRandomImage();
+    while (lastViewed.includes(randImg2)) {
+    randImg2 = getRandomImage();
+    }
+    
+    lastViewed.push(randImg2);
+    
+  do {
+    var randImg3 = getRandomImage();
+    } while (lastViewed.includes(randImg3));
+    lastViewed.push(randImg3);
+    
+    if (lastViewed.length > 3) {
+      lastViewed.splice(0, 3);
+}
   
-  //TODO: Add one to the timesViewed
+imageOne.src = randImg1.src;
+imageTwo.src = randImg2.src;
+imageThree.src = randImg3.src;
 
+imageOne.currentImage = randImg1;
+imageTwo.currentImage = randImg2;
+imageThree.currentImage = randImg3;
+
+randImg1.timesViewed += 1;
+randImg2.timesViewed += 1;
+randImg3.timesViewed += 1;
+
+console.log(ImageChoice.all);
+
+var clickContainer = document.getElementById('click-container');
+
+clickContainer.addEventListener('click', function (event) {
+  if (event.target.tagName !== 'IMG') {
+  return;
 }
 
-// images.addEventListener('click', function (event) {
-//   console.log('click');
-// }); //for each image we have, wire the click handler
+voteCount++;
+console.log('click number ' + voteCount);
+
+if (voteCount > maxVotes) {
+  showResults();
+  return;
+}
+
+var currentImage = event.target.currentImage;
+
+// Record the click on that ImageChoice
+currentImage.timesClicked++;
+
+// Log to ensure the click was tracked
+console.log('click', currentImage);
+
+// Voting done, get more images
+displayImages();
+});
 
 
 function ImageChoice (name, src){
@@ -110,3 +164,8 @@ initialize();
 // }
 
 //now to add the data
+
+function showResults() {
+  console.log('show results now!');
+// TODO: show results!
+}
