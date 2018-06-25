@@ -1,5 +1,5 @@
 'use strict';
-var maxVotes = 5;
+var maxVotes = 25;
 var voteCount = 0;
 
 var lastViewed = [];
@@ -17,36 +17,37 @@ function displayImages(){
 
   do {
     var randImg1 = getRandomImage();
-    } while (lastViewed.includes(randImg1));
-    lastViewed.push(randImg1);
-    
+  } while (lastViewed.includes(randImg1));
+  lastViewed.push(randImg1);
+
+  do {
     var randImg2 = getRandomImage();
-    while (lastViewed.includes(randImg2)) {
-    randImg2 = getRandomImage();
-    }
-    
-    lastViewed.push(randImg2);
-    
+  } while (lastViewed.includes(randImg2));
+  lastViewed.push(randImg2);
+
   do {
     var randImg3 = getRandomImage();
-    } while (lastViewed.includes(randImg3));
-    lastViewed.push(randImg3);
-    
-    if (lastViewed.length > 3) {
-      lastViewed.splice(0, 3);
+  } while (lastViewed.includes(randImg3));
+  lastViewed.push(randImg3);
+
+  if (lastViewed.length > 3) {
+    lastViewed.splice(0, 3);
+  }
+
+  imageOne.src = randImg1.src;
+  imageTwo.src = randImg2.src;
+  imageThree.src = randImg3.src;
+
+  imageOne.currentImage = randImg1;
+  imageTwo.currentImage = randImg2;
+  imageThree.currentImage = randImg3;
+
+  randImg1.timesViewed += 1;
+  randImg2.timesViewed += 1;
+  randImg3.timesViewed += 1;
+
 }
-  
-imageOne.src = randImg1.src;
-imageTwo.src = randImg2.src;
-imageThree.src = randImg3.src;
 
-imageOne.currentImage = randImg1;
-imageTwo.currentImage = randImg2;
-imageThree.currentImage = randImg3;
-
-randImg1.timesViewed += 1;
-randImg2.timesViewed += 1;
-randImg3.timesViewed += 1;
 
 console.log(ImageChoice.all);
 
@@ -54,27 +55,27 @@ var clickContainer = document.getElementById('click-container');
 
 clickContainer.addEventListener('click', function (event) {
   if (event.target.tagName !== 'IMG') {
-  return;
-}
+    return;
+  }
 
-voteCount++;
-console.log('click number ' + voteCount);
+  voteCount++;
+  console.log('click number ' + voteCount);
 
-if (voteCount > maxVotes) {
-  showResults();
-  return;
-}
+  if (voteCount > maxVotes) {
+    showResultChart();
+    return;
+  }
 
-var currentImage = event.target.currentImage;
+  var currentImage = event.target.currentImage;
 
-// Record the click on that ImageChoice
-currentImage.timesClicked++;
+  // Record the click on that ImageChoice
+  currentImage.timesClicked++;
 
-// Log to ensure the click was tracked
-console.log('click', currentImage);
+  // Log to ensure the click was tracked
+  console.log('click', currentImage);
 
-// Voting done, get more images
-displayImages();
+  // Voting done, get more images
+  displayImages();
 });
 
 
@@ -85,7 +86,7 @@ function ImageChoice (name, src){
   this.timesClicked = 0;
   ImageChoice.all.push(this);
 }
-ImageChoice.all = []
+ImageChoice.all = [];
 
 function initialize() {
   new ImageChoice('r2d2Bag', 'img/bag.jpg');
@@ -111,61 +112,71 @@ function initialize() {
 }
 initialize();
 
-//typed out from class just to give me a basic idea of how to adjust what i've got.
 
-//Chart info: 
 
-// function showResultChart() {
-//   var canvas = document.getElementById('resultsCanvas');
-// }
+function showResultChart() {
+  var canvas = document.getElementById('resultsCanvas');
 
-//   //unhide our canvas
-//   canvas.style.display = 'block';
+  canvas.style.display = 'block';
 
-//   //need to build up a list of labels
+  var labels = [];
+  var voterCounts = [];
+  var showCounts = [];
+  var votePercent = [];
 
-//   var labels = [];
-//   var voteCounts = [];
-//   var showCounts = [];
-//   for (var i = 0; i < Placeholder.all.length: i++) {
-//     labels [i] = Placeholder.all[i].name;
-//   }
+  for (var i = 0; i < ImageChoice.all.length; i++) {
+    labels [i] = ImageChoice.all[i].name;
+    voterCounts [i] = ImageChoice.all[i].voterCounts;
+    showCounts [i] = ImageChoice.all[i].showCounts;
+    votePercent[i] = 100 * voterCounts[i] / showCounts[i];
+  }
 
-//   var ctx = canvas.getContext('2d'); 
-//   //ctx is variable for canvas
+  var ctx = canvas.getContext('2d');
 
-//   var chart = new chart(ctx, {
-//     type: 'bar',
-//     data: {
-//       labels: ['Vote Count'],
-//       datasets: [{
-//         label: labels,
-//         datasets: [{
-//           label: 'Vote Count',
-//           background
-//           data: voteCounts
-//         }]
-//       }]
-//     };
-//     options: {
-//       responsive: true;
-//       scales: {
-//         yAxes: [{
-//           ticks: {
-//             beginAtZero: true
-//           }
-//         }]
-//       }
-//       title: {
-//         dispaly: true;
-//         text: 'Voting Results'
-//     }
-//   });
-// }
+  new Chart(ctx, {
+    type: 'bar',
 
-//now to add the data
-
-function showResults() {
-  console.log('show results now!');
-// TODO: show results!
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Vote Count',
+          backgroundColor: '593C8F',
+          data: voterCounts
+        },
+        {
+          label:'Show Count',
+          backgroundColor: '#DB5461',
+          data: showCounts
+        },
+        {
+          label: 'Vote %',
+          data: votePercent
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }
+        ]
+      },
+      title: {
+        display: true,
+        text: 'Voting Results'
+      }
+    }
+  });
 }
+
+var reset = document.querySelector('button[type="reset"]');
+
+reset.addEventListener('click', function resetClick(event){
+  console.log('reset click', event);
+  initialize();
+  displayImages();
+});
